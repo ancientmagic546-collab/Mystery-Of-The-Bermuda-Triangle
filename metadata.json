@@ -1,0 +1,6 @@
+{
+  "name": "AERO-TRIANGLE: Bermuda & Alien Anomaly Tactical Research Terminal",
+  "description": "Classified Windows workstation for oceanic anomalous researchers: 3D interactive Earth globe, dual surface & deep web intelligence browser, historical maritime disappearance archives, incident meteorological comparator, and structural blueprint analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

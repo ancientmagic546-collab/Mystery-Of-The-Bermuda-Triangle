@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var rawFetch = window.fetch;
+          var currentFetch = typeof rawFetch === 'function' ? rawFetch.bind(window) : rawFetch;
+          var descriptor = {
+            get: function() {
+              return currentFetch;
+            },
+            set: function(fn) {
+              currentFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          };
+          Object.defineProperty(window, 'fetch', descriptor);
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            try {
+              Object.defineProperty(Window.prototype, 'fetch', descriptor);
+            } catch (_) {}
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AERO-TRIANGLE: Bermuda & Alien Anomaly Tactical Research Terminal</title>
+    <meta name="description" content="Classified Windows workstation for oceanic anomalous researchers: 3D interactive Earth globe, dual surface & deep web intelligence browser, historical maritime disappearance archives, incident meteorological comparator, and structural blueprint analysis." />
+    <meta property="og:title" content="AERO-TRIANGLE: Bermuda & Alien Anomaly Tactical Research Terminal" />
+    <meta property="og:description" content="Classified Windows workstation for oceanic anomalous researchers: 3D interactive Earth globe, dual surface & deep web intelligence browser, historical maritime disappearance archives, incident meteorological comparator, and structural blueprint analysis." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
